@@ -57,7 +57,7 @@ raw zone table build
 -- country table build
 
 -- todo: complete table build
-CREATE OR ALTER TABLE {{env}}_tasty_bytes.raw_pos.country
+CREATE OR ALTER TABLE {{}}_tasty_bytes.raw_pos.country
 (
    country_id NUMBER(18,0),
    country VARCHAR(16777216),
@@ -294,8 +294,17 @@ USE WAREHOUSE demo_build_wh;
 
 
 -- country table load
-COPY INTO {{env}}_tasty_bytes.raw_pos.country
-FROM @{{env}}_tasty_bytes.public.s3load/raw_pos/country/;
+-- COPY INTO {{env}}_tasty_bytes.raw_pos.country
+-- (
+--    country_id,
+--    country,
+--    iso_currency,
+--    iso_country,
+--    city_id,
+--    city,
+--    city_population
+-- )
+-- FROM @{{env}}_tasty_bytes.public.s3load/raw_pos/country/;
 
 
 -- franchise table load
